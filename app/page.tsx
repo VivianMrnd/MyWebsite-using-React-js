@@ -10,7 +10,6 @@ import { Card } from "@/components/ui/card"
 import ProjectLink from "@/components/project-link"
 import TimelineEvent from "@/components/timeline-event"
 import { useMobile } from "@/hooks/use-mobile"
-import Head from 'next/head';
 
 export default function Home() {
   const isMobile = useMobile()
@@ -556,8 +555,8 @@ export default function Home() {
               <ProjectLink
                 title="Wedding"
                 description="A simple wedding website using simple HTML, CSS, bootstrap, javascript integrating to google sheet app script."
-                domain="https://keeganandpat.netlify.app/"
-                github="https://github.com/VivianMrnd/Wedding"
+                domain="keeganandpat.netlify.app/"
+                github="github.com/VivianMrnd/Wedding"
                 color="#4ECDC4"
                 isVisible={isProjectsVisible}
                 delay={0.1}
@@ -566,8 +565,8 @@ export default function Home() {
               <ProjectLink
                 title="To Do List"
                 description="A useful to do list app to keep track on my productivity. I am using MERN framework, try it out!"
-                domain="https://to-do-list-pi-inky-41.vercel.app/"
-                github="https://github.com/VivianMrnd/ToDoList-using-MERN"
+                domain="to-do-list-pi-inky-41.vercel.app/"
+                github="github.com/VivianMrnd/ToDoList-using-MERN"
                 color="#FF6B6B"
                 isVisible={isProjectsVisible}
                 delay={0.3}
