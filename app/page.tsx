@@ -565,7 +565,7 @@ export default function Home() {
               <ProjectLink
                 title="To Do List"
                 description="A useful to do list app to keep track on my productivity. I am using MERN framework, try it out!"
-                domain="to-do-list-pi-inky-41.vercel.app/"
+                domain="to-do-list-service.vercel.app/"
                 github="github.com/VivianMrnd/ToDoList-using-MERN"
                 color="#FF6B6B"
                 isVisible={isProjectsVisible}
