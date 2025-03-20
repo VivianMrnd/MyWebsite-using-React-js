@@ -571,16 +571,16 @@ export default function Home() {
                 delay={0.3}
               />
 
-              {/* <ProjectLink
-                title="TrailBuddy"
-                description="Hiking trail finder with weather integration and community trail reports."
-                domain="trailbuddy.vercel.app"
-                github="github.com/username/trailbuddy"
-                color="#FFD166"
+               <ProjectLink
+                title="Ticketing System"
+                description="Creating to reised an issue with status, username, and description."
+                domain="ticketing-system-self.vercel.app/"
+                github="github.com/VivianMrnd/ticketing-system"
+                color="#6BCB77"
                 isVisible={isProjectsVisible}
                 delay={0.5}
               />
-
+            {/*
               <ProjectLink
                 title="DevBookshelf"
                 description="Curated collection of programming books with notes, highlights, and discussion."
