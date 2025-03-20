@@ -9,7 +9,8 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import ProjectLink from "@/components/project-link"
 import TimelineEvent from "@/components/timeline-event"
-import { useMobile } from "@/hooks/use-mobile"
+import { useMobile } from "@/hooks/use-mobile";
+import ContactForm from "@/app/pages/contact";
 
 export default function Home() {
   const isMobile = useMobile()
@@ -652,69 +653,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <form
-              className="bg-gradient-to-br from-[#F9FFFE] to-[#F0FFFC] p-5 md:p-8 rounded-2xl shadow-lg space-y-4 dark:from-[#1A2625] dark:to-[#152321]"
-              style={{
-                transform: isContactVisible 
-                  ? "translateX(0)" 
-                  : `translateX(${windowWidth && windowWidth < 768 ? "0" : "50px"})`,
-                opacity: isContactVisible ? 1 : 0,
-                transition: "transform 0.8s ease-out, opacity 0.8s ease-out",
-                transitionDelay: windowWidth && windowWidth < 768 ? "0" : "0.2s",
-              }}
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-[#4ECDC4]">
-                    Name
-                  </label>
-                  <input
-                    id="name"
-                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
-                    type="text"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-[#4ECDC4]">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
-                    type="email"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-[#4ECDC4]">
-                  Subject
-                </label>
-                <input
-                  id="subject"
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
-                  type="text"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-[#4ECDC4]">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl h-24 md:h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
-                  required
-                ></textarea>
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-[#4ECDC4] hover:bg-[#3DBDB4] text-white border-none rounded-xl py-4 md:py-6 text-base md:text-lg shadow-md"
-              >
-                Send Message
-              </Button>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>
