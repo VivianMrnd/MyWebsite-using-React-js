@@ -37,7 +37,7 @@ export default function Home() {
     return rect.top <= window.innerHeight * 0.75 && rect.bottom >= window.innerHeight * 0.25
   }
 
-  const isHeroVisible = heroRef.current ? checkVisible(heroRef) : false
+  const isHeroVisible = heroRef.current ? checkVisible(heroRef) : true
   const isAboutVisible = aboutRef.current ? checkVisible(aboutRef) : false
   const isJourneyVisible = journeyRef.current ? checkVisible(journeyRef) : false
   const isPassionsVisible = passionsRef.current ? checkVisible(passionsRef) : false
