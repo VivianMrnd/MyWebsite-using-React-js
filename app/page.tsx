@@ -336,7 +336,7 @@ export default function Home() {
         <section
           id="journey"
           ref={journeyRef}
-          className={`scroll-mt-20 transition-all duration-1000 ${isJourneyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`scroll-mt-20 transition-all duration-1000 px-4 ${isJourneyVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h2 className="text-3xl font-bold mb-12 text-center relative">
             <span className="relative z-10">My Journey</span>
@@ -344,10 +344,13 @@ export default function Home() {
           </h2>
 
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#E6E6E6] dark:bg-[#2A2A2A] rounded-full"></div>
+            {/* Timeline line - hidden on mobile, visible on desktop */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#E6E6E6] dark:bg-[#2A2A2A] rounded-full"></div>
+            
+            {/* Timeline line - visible on mobile, hidden on desktop */}
+            <div className="md:hidden absolute left-6 h-full w-1 bg-[#E6E6E6] dark:bg-[#2A2A2A] rounded-full"></div>
 
-            <div className="space-y-24 relative">
+            <div className="space-y-12 md:space-y-24 relative">
               <TimelineEvent
                 year="2018"
                 title="The Beginning"
@@ -361,8 +364,7 @@ export default function Home() {
               <TimelineEvent
                 year="2019"
                 title="Project Learning"
-                description="As part of midterm exam, I created a payroll and enrollment system. Did not sleep for 1 day just to finished this, 
-                it was a huge sacrifice and I cried a lot :("
+                description="As part of midterm exam, I created a payroll and enrollment system. Did not sleep for 1 day just to finished this, it was a huge sacrifice and I cried a lot :("
                 icon="💻"
                 position="right"
                 isVisible={isJourneyVisible}
@@ -372,9 +374,7 @@ export default function Home() {
               <TimelineEvent
                 year="2020"
                 title="Pandemic code era"
-                description="It was so challenging and I am losing hope because of what's happening in the world but thank God I have a wonderful 
-                friends and teachers that supported me during that time, I know it was challenging for them also and I love them. They're the reason why 
-                I'm holding on to my passion"
+                description="It was so challenging and I am losing hope because of what's happening in the world but thank God I have a wonderful friends and teachers that supported me during that time, I know it was challenging for them also and I love them. They're the reason why I'm holding on to my passion"
                 icon="😷"
                 position="left"
                 isVisible={isJourneyVisible}
@@ -384,10 +384,7 @@ export default function Home() {
               <TimelineEvent
                 year="2023"
                 title="First job journey in IT industry"
-                description="I was so excited after being accepted in the job. I was a Web and App developer that time. Sir Julius fully trusted me, 
-                he allows me to revise a company website (check euodoo.com.ph 😊). He made me pick what kind of framework I am comfortable with.
-                I handled a lot of project, I think 4-5 projects. Never regreted to be in there. I love them but I need to move forward for
-                a better opportunity."
+                description="I was so excited after being accepted in the job. I was a Web and App developer that time. Sir Julius fully trusted me, he allows me to revise a company website (check euodoo.com.ph 😊). He made me pick what kind of framework I am comfortable with. I handled a lot of project, I think 4-5 projects. Never regreted to be in there. I love them but I need to move forward for a better opportunity."
                 icon="👔"
                 position="right"
                 isVisible={isJourneyVisible}
@@ -397,10 +394,7 @@ export default function Home() {
               <TimelineEvent
                 year="2024"
                 title="Lezzgo Bigger Client"
-                description="I was so excited, imagining being a newbie and prulife (sir Lito) welcome me to his team and it was the best team I have.
-                I feel really amazed because of these amazing experienced developers I am with. I love that they never leave me behind, 
-                I love how they want me to learn, I love how they made me feel inluded even in personal talks even though I am the only girl with an awkward personality. 
-                I love them all. It was the best experience."
+                description="I was so excited, imagining being a newbie and prulife (sir Lito) welcome me to his team and it was the best team I have. I feel really amazed because of these amazing experienced developers I am with. I love that they never leave me behind, I love how they want me to learn, I love how they made me feel inluded even in personal talks even though I am the only girl with an awkward personality. I love them all. It was the best experience."
                 icon="📈"
                 position="left"
                 isVisible={isJourneyVisible}
@@ -410,8 +404,7 @@ export default function Home() {
               <TimelineEvent
                 year="Now"
                 title="Current Chapter"
-                description="Sadly, my contract with prulife has ended and I know it happens for a reason, I know it will be bigger, I know it will
-                be better."
+                description="Sadly, my contract with prulife has ended and I know it happens for a reason, I know it will be bigger, I know it will be better."
                 icon="✨"
                 position="right"
                 isVisible={isJourneyVisible}
