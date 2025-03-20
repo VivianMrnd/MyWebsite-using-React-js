@@ -20,9 +20,13 @@ export default function Home() {
   const passionsRef = useRef<HTMLDivElement>(null!)
   const projectsRef = useRef<HTMLDivElement>(null!)
   const contactRef = useRef<HTMLDivElement>(null!)
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
 
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+    }
     const handleScroll = () => {
       setScrollY(window.scrollY)
     }
@@ -607,7 +611,7 @@ export default function Home() {
               style={{
                 transform: isContactVisible 
                   ? "translateX(0)" 
-                  : `translateX(${window.innerWidth < 768 ? "0" : "-50px"})`,
+                  : `translateX(${windowWidth && windowWidth < 768 ? "0" : "-50px"})`,
                 opacity: isContactVisible ? 1 : 0,
                 transition: "transform 0.8s ease-out, opacity 0.8s ease-out",
               }}
@@ -653,10 +657,10 @@ export default function Home() {
               style={{
                 transform: isContactVisible 
                   ? "translateX(0)" 
-                  : `translateX(${window.innerWidth < 768 ? "0" : "50px"})`,
+                  : `translateX(${windowWidth && windowWidth < 768 ? "0" : "50px"})`,
                 opacity: isContactVisible ? 1 : 0,
                 transition: "transform 0.8s ease-out, opacity 0.8s ease-out",
-                transitionDelay: window.innerWidth < 768 ? "0" : "0.2s",
+                transitionDelay: windowWidth && windowWidth < 768 ? "0" : "0.2s",
               }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
