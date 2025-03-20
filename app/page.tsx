@@ -592,73 +592,79 @@ export default function Home() {
         <section
           id="contact"
           ref={contactRef}
-          className={`scroll-mt-20 transition-all duration-1000 ${isContactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`scroll-mt-20 transition-all duration-1000 px-4 ${isContactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <h2 className="text-3xl font-bold mb-12 text-center relative">
+          <h2 className="text-3xl font-bold mb-8 md:mb-12 text-center relative">
             <span className="relative z-10">Get In Touch</span>
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-3 bg-[#6BCB77]/40 -z-10 rounded-full"></span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12">
             <div
-              className="bg-white p-8 rounded-2xl shadow-lg space-y-6 dark:bg-[#1E1E1E]"
+              className="bg-white p-5 md:p-8 rounded-2xl shadow-lg space-y-4 md:space-y-6 dark:bg-[#1E1E1E]"
               style={{
-                transform: isContactVisible ? "translateX(0)" : "translateX(-50px)",
+                transform: isContactVisible 
+                  ? "translateX(0)" 
+                  : `translateX(${window.innerWidth < 768 ? "0" : "-50px"})`,
                 opacity: isContactVisible ? 1 : 0,
                 transition: "transform 0.8s ease-out, opacity 0.8s ease-out",
               }}
             >
-              <p className="text-lg text-[#444444] dark:text-[#DDDDDD] leading-relaxed">
+              <p className="text-base md:text-lg text-[#444444] dark:text-[#DDDDDD] leading-relaxed">
                 I'm always open to interesting conversations, collaboration opportunities, or just connecting with
                 like-minded people.
               </p>
-              <p className="text-lg text-[#444444] dark:text-[#DDDDDD] leading-relaxed">
+              <p className="text-base md:text-lg text-[#444444] dark:text-[#DDDDDD] leading-relaxed">
                 Whether you want to discuss a project, talk about music, share hiking recommendations, or just say
                 hello, feel free to reach out!
               </p>
-              <div className="flex items-center gap-3">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-[#FFE8E8] border-[#FFD4D4] hover:border-[#FFBDBD] dark:bg-[#2A2222] dark:border-[#3A2A2A]"
-                  asChild
-                >
-                  <a href="mailto:vivian614miranda@gmail.com" aria-label="Email">
-                    <Mail className="h-5 w-5 text-[#FF6B6B]" />
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full bg-[#E8F8F5] border-[#D4F1F9] hover:border-[#BDE9F4] dark:bg-[#222A28] dark:border-[#2A3A38]"
-                  asChild
-                >
-                  <a href="https://github.com/VivianMrnd" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <Github className="h-5 w-5 text-[#4ECDC4]" />
-                  </a>
-                </Button>
-                <div className="ml-2 text-[#666666] dark:text-[#AAAAAA]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <div className="flex gap-3">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full bg-[#FFE8E8] border-[#FFD4D4] hover:border-[#FFBDBD] dark:bg-[#2A2222] dark:border-[#3A2A2A]"
+                    asChild
+                  >
+                    <a href="mailto:vivian614miranda@gmail.com" aria-label="Email">
+                      <Mail className="h-5 w-5 text-[#FF6B6B]" />
+                    </a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full bg-[#E8F8F5] border-[#D4F1F9] hover:border-[#BDE9F4] dark:bg-[#222A28] dark:border-[#2A3A38]"
+                    asChild
+                  >
+                    <a href="https://github.com/VivianMrnd" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <Github className="h-5 w-5 text-[#4ECDC4]" />
+                    </a>
+                  </Button>
+                </div>
+                <div className="text-[#666666] dark:text-[#AAAAAA] text-sm md:text-base">
                   <p>vivian614miranda@gmail.com</p>
                 </div>
               </div>
             </div>
             <form
-              className="bg-gradient-to-br from-[#F9FFFE] to-[#F0FFFC] p-8 rounded-2xl shadow-lg space-y-4 dark:from-[#1A2625] dark:to-[#152321]"
+              className="bg-gradient-to-br from-[#F9FFFE] to-[#F0FFFC] p-5 md:p-8 rounded-2xl shadow-lg space-y-4 dark:from-[#1A2625] dark:to-[#152321]"
               style={{
-                transform: isContactVisible ? "translateX(0)" : "translateX(50px)",
+                transform: isContactVisible 
+                  ? "translateX(0)" 
+                  : `translateX(${window.innerWidth < 768 ? "0" : "50px"})`,
                 opacity: isContactVisible ? 1 : 0,
                 transition: "transform 0.8s ease-out, opacity 0.8s ease-out",
-                transitionDelay: "0.2s",
+                transitionDelay: window.innerWidth < 768 ? "0" : "0.2s",
               }}
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-[#4ECDC4]">
                     Name
                   </label>
                   <input
                     id="name"
-                    className="w-full px-4 py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
                     type="text"
                     required
                   />
@@ -669,7 +675,7 @@ export default function Home() {
                   </label>
                   <input
                     id="email"
-                    className="w-full px-4 py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
                     type="email"
                     required
                   />
@@ -681,7 +687,7 @@ export default function Home() {
                 </label>
                 <input
                   id="subject"
-                  className="w-full px-4 py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
                   type="text"
                   required
                 />
@@ -692,13 +698,13 @@ export default function Home() {
                 </label>
                 <textarea
                   id="message"
-                  className="w-full px-4 py-3 border border-[#D4F1F9] rounded-xl h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-[#D4F1F9] rounded-xl h-24 md:h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#4ECDC4] bg-white/80 backdrop-blur-sm dark:bg-[#1E1E1E] dark:border-[#2A3A38]"
                   required
                 ></textarea>
               </div>
               <Button
                 type="submit"
-                className="w-full bg-[#4ECDC4] hover:bg-[#3DBDB4] text-white border-none rounded-xl py-6 text-lg shadow-md"
+                className="w-full bg-[#4ECDC4] hover:bg-[#3DBDB4] text-white border-none rounded-xl py-4 md:py-6 text-base md:text-lg shadow-md"
               >
                 Send Message
               </Button>
