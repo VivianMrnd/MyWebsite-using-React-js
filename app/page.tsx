@@ -89,12 +89,14 @@ export default function Home() {
       </div>
 
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-[#FFFAF0]/80 dark:bg-[#121212]/80 border-b border-[#E6E6E6] dark:border-[#2A2A2A]">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="font-bold text-xl">
-            <span className="text-[#FF6B6B]">Dev</span>
-            <span className="text-[#4ECDC4]">Story</span>
-          </div>
+      <header className="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-lg bg-[#FFFAF0]/80 dark:bg-[#121212]/80 border-b border-[#E6E6E6] dark:border-[#2A2A2A] shadow-sm">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+          <Link href="#">
+            <div className="font-bold text-xl">
+              <span className="text-[#FF6B6B]">Dev</span>
+              <span className="text-[#4ECDC4]">Story</span>
+            </div>
+          </Link>
           <nav className="hidden md:flex gap-6">
             <Link
               href="#about"
