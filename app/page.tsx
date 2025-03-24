@@ -303,7 +303,7 @@ export default function Home() {
               </p>
             </div>
             <div
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2"
               style={{
                 transform: isAboutVisible ? "translateX(0)" : "translateX(50px)",
                 opacity: isAboutVisible ? 1 : 0,
@@ -599,7 +599,7 @@ export default function Home() {
         <section
           id="contact"
           ref={contactRef}
-          className={`scroll-mt-20 transition-all duration-1000 px-4 ${isContactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`scroll-mt-20 transition-all duration-1000 ${isContactVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h2 className="text-3xl font-bold mb-8 md:mb-12 text-center relative">
             <span className="relative z-10">Get In Touch</span>
